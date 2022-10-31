@@ -36,6 +36,7 @@ const Profile = () => {
         setIsAuthenticating(false);
         setIsLoggedIn(true);
         setProfileData(res.data);
+        console.log(res.data)
         
         axios.get(`${SERVER_URL}/recipe/${res.data.id}`)
         .then((res) => setRecipes(res.data))
