@@ -12,7 +12,6 @@ import Footer from "./components/footer/Footer";
 
 import './App.scss';
 
-// dummy text
 function App() {
   return (
     <BrowserRouter>
