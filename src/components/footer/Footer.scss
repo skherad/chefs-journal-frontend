@@ -1,0 +1,15 @@
+@use '../../styles/partials/variables' as *;
+
+.footer {
+    background-color: $primary-color-light;
+    font-size: 0.5rem;
+    color: $primary-color-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    &__credits {
+        color: $label;
+    }
+}

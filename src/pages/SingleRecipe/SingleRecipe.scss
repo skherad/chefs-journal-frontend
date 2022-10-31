@@ -1,0 +1,64 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.single-recipe {
+    background-color: $primary-color-light;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    &__photo {
+        align-self: center;
+        margin-bottom: 1rem;
+        width: 80%;
+        border-radius: 8px;
+        height: 15rem;
+        background-size: cover;
+        background-position: center;
+        box-shadow: rgba(81, 62, 109, 0.8) 0px 5px 15px;  
+        border-radius: 8%;  
+    }
+    &__save-button {
+        @include button;
+        align-self: center;
+        font-size: 0.75rem;
+        width: 5rem;
+        &--done {
+            background-color: $primary-color-light;
+            border: 2px solid $primary-color-dark;
+            color: $primary-color-dark;
+            width: 9.375rem;
+            cursor: auto;
+            box-shadow: none;
+        }
+        &--disabled {
+            display: none;
+        }
+    }
+    &__delete-button {
+        @include button;
+        align-self: center;
+        font-size: 0.75rem;
+        width: 6rem;
+    }
+    &__header {
+        font-weight: 600;
+        color: $primary-color-dark;
+        font-size: 1.25rem;
+    }
+    &__title {
+        font-weight: 600;
+        color: $primary-color-dark;
+        margin: 0;
+    }
+    &__list {
+        padding: 1rem;
+        margin: 0;
+    }
+    &__item {
+        line-height: 1.25rem;
+        margin-bottom: 0.25rem;
+    }
+    &__name {
+        width: fit-content;
+    }
+}

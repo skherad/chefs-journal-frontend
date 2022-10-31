@@ -1,0 +1,22 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;
+
+.header {
+    background-color: $primary-color-dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    &__logo {
+      width: 110px;
+    }
+    &__link {
+      text-decoration: none;
+      color: $primary-color-light;
+      font-size: .75rem;
+      margin-left: 1rem;
+      &:hover {
+        border-bottom: 2px solid $primary-light-color;
+      }
+    }
+}

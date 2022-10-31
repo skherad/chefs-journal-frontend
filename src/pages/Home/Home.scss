@@ -1,0 +1,19 @@
+@use '../../styles/partials/variables' as *;
+
+.home {
+    min-height: 80%;
+    background-color: $primary-color-light;
+    padding: 3rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__header{
+        margin: 0;
+        margin-bottom: 2rem;
+        color: $primary-color-dark;
+    }
+    &__icon {
+        width: 100px;
+        margin-bottom: 3rem;
+    }
+}

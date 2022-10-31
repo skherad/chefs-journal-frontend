@@ -1,0 +1,6 @@
+@use '../../styles/partials/variables' as *;
+
+.saved {
+    background-color: $primary-color-light;
+    min-height: 52vh;
+}

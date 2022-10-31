@@ -1,0 +1,66 @@
+@use '../../styles/partials/variables' as *;
+
+.recipe {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+        padding: 0;
+        list-style-type: none;
+    }
+    &__card {
+        width: 31%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0.5rem;
+        margin-bottom: 1rem;
+        text-decoration: none;
+        position: relative;
+        cursor:pointer ;
+    }
+    &__photo-more {
+        width: 7rem;
+        border-radius: 8px;
+        height: 10rem;
+        background-size: cover;
+        background-position: center;
+        background-image: url('../../assets/images/NewRecipe.png');
+        position: relative;
+        box-shadow: rgba(81, 62, 109, 0.8) 0px 5px 15px;  
+        border-radius: 8%;  
+    }
+    &__title-container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.25rem;
+        position: absolute;
+        background-color: rgba(81, 62, 109, 0.5);
+        bottom: 0;
+        height: 4rem;
+        width: 100%;
+        border-radius: 0 0 8px 8px;
+    }
+    &__title {
+        color: $primary-color-light;
+        font-weight: 600;
+        font-size: .9rem;
+        text-align: center;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 7rem;
+        border-radius: 8px;
+        height: 10rem;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        box-shadow: rgba(81, 62, 109, 0.8) 0px 5px 15px;  
+        border-radius: 8%;  
+    }
+}

@@ -1,0 +1,132 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $primary-color-light;
+    padding: 1rem;
+
+    &__label {
+        margin-bottom: 0.5rem;
+        color: $primary-color-dark;
+    }
+    &__input-file {
+        margin-bottom: 1rem;
+    }
+    &__input {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border: 1px $border solid;
+        border-radius: 4px;
+        width: 100%;
+        box-shadow: rgba(81, 62, 109, 0.35) 0px 5px 15px; 
+        font-size: 16px; 
+        &:focus {
+            outline: none;
+            border: 1px $primary-color-dark solid;
+        }
+        &--short {
+            width: 4rem;
+            height: 2rem;
+            margin-right: 1rem;
+        }
+    }
+    &__ingredient-card {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: rgba(81, 62, 109, 0.35) 0px 5px 15px;  
+        margin-bottom: 0.25rem;
+
+    }
+    &__remove {
+        background-image: url('../../assets/images/close-24px.svg');
+        background-size: 60%;
+        background-color: white;
+        border: none;
+        height: 17px;
+        width: 25px;
+        background-repeat: no-repeat;
+        position: absolute;
+        top:8px;
+        right:0;
+        cursor: pointer;
+    }
+    &__select-ingredient {
+        width: 90%;
+        display: inline-block;
+        margin-bottom: 1rem
+    }
+    &__qty-container {
+        display: flex;
+
+    }
+    &__add {
+        @include button;
+        padding: 0.25rem 0;
+        width: 3rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    &__select {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border: 1px $border solid;
+        border-radius: 4px;
+        width: 100%;
+        color: #757575;
+        padding-right: 1rem;
+        appearance: none;
+        background-image: url('../../assets/images/arrow.svg');
+        background-repeat: no-repeat;
+        background-position: 98%;
+        box-shadow: rgba(81, 62, 109, 0.35) 0px 5px 15px;  
+        padding: 1rem;
+        &:focus {
+            outline: none;
+            border: 1px $primary-color-dark solid;
+        }
+        &--unit {
+            width: 4rem;
+            margin-left: 0.5rem;
+        }
+    }
+    &__textarea {
+        padding: 1rem;
+        border: 1px $border solid;
+        border-radius: 4px;
+        height: 200px;
+        width: 100%;
+        box-shadow: rgba(81, 62, 109, 0.35) 0px 5px 15px;  
+        font-size: 16px; 
+
+        &::placeholder {
+            font-family: 'AvenirNext';
+        }
+        &:focus {
+            outline: none;
+            border: 1px $primary-color-dark solid;
+        }
+    }
+    &__button-container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin-top: 1rem;
+    }
+    &__submit {
+        @include button;
+    }
+    &__cancel {
+        @include button;
+        background-color: $primary-color-light;
+        color: $secondary-color-dark;
+    }
+}

@@ -1,0 +1,44 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.user {
+    background: linear-gradient(to top, $primary-color-light 92%, $primary-color-dark 92%);
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    &__header {
+        font-size: 1.25rem;
+        color: $primary-color-dark;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600
+    }
+    &__connect {
+        @include button;
+        width: 7.1875rem;
+        &:hover {
+            background-color: $primary-color-light;
+            border: 2px solid $primary-color-dark;
+            color: $primary-color-dark;
+        }
+        &--done {
+            background-color: $primary-color-light;
+            border: 2px solid $primary-color-dark;
+            color: $primary-color-dark;
+            padding: 0.5rem 0;
+            cursor: auto;
+            box-shadow: none;
+        }
+    }
+    &__msg {
+        @include button;
+        background-color: $primary-color-light;
+        border: 2px solid $primary-color-dark;
+        color: $primary-color-dark;
+        padding: 0.5rem 0;
+        width: 6.875rem;
+        box-shadow: none;
+    }
+}

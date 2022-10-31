@@ -1,0 +1,85 @@
+@use '../../styles/partials/variables' as *;
+
+.profile {
+    background: linear-gradient(to top, $primary-color-light 92%, $primary-color-dark 92%);
+    min-height:80vh;
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        padding-top: 1rem;
+    }
+    &__avatar {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        border: 2px solid white;
+        background-position: center;
+        background-size: cover;
+    }
+    &__username {
+        font-size: 1.25rem;
+        color: $primary-color-dark;
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+        font-weight: 600;
+    }
+    &__stats {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-between;
+        margin: 0 0 1rem 0;
+        padding: 0;
+    }
+    &__stats-item {
+        border: 2px solid $divider;
+        border-right: none;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.75rem 0;
+        &--first {
+            border-left: none;
+        }
+    }
+    &__stats-num {
+        color: $primary-color-text;
+        font-weight: 600;
+        font-size: 0.8rem;
+        line-height: 1.25rem;
+    }
+    &__stats-label{
+        color: $label;
+        font-weight: 600;
+        font-size: 0.8rem;
+        line-height: 1.25rem;
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        padding: 0.5rem 1rem;
+    }
+    &__nav {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 0.9rem;
+    }
+    &__nav-link {
+        color: $label;
+        padding-bottom: 0.5rem;
+        font-weight: 600;
+        &:hover {
+            cursor: pointer;
+            color: $primary-color-dark;
+            border-bottom: 2px solid $primary-color-dark;
+        }
+        &--active {
+            color: $primary-color-dark;
+            border-bottom: 2px solid $primary-color-dark;
+        }
+    }
+}
+
