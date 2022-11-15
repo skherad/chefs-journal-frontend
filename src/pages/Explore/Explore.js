@@ -32,14 +32,14 @@ const Explore = () => {
 
   // request to server to get recipes that are not saved or created by the user
   useEffect(()=>{
-    axios.get(`${SERVER_URL}/recipe/explore/${userId}`)
+    axios.get(`${SERVER_URL}/recipe/explore/${userId}`,  { withCredentials: true })
     .then(res => setExploreRecipes(res.data))
     .catch(err => console.log(err))
   },[])
 
   // request to server to get other users
   useEffect(()=>{
-    axios.get(`${SERVER_URL}/user/explore/${userId}`)
+    axios.get(`${SERVER_URL}/user/explore/${userId}`,  { withCredentials: true })
     .then(res => setExploreUsers(res.data))
     .catch(err => console.log(err))
   },[])

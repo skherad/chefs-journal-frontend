@@ -50,7 +50,7 @@ const NewRecipe = () => {
 
   // request to get ingredients from back end and set the array for select options
   useEffect(()=>{
-    axios.get(`${SERVER_URL}/ingredient`)
+    axios.get(`${SERVER_URL}/ingredient`,  { withCredentials: true })
     .then(res=>{
       let result = [];
       res.data?.map(ingredient=>result.push({value: ingredient.id, label:ingredient.name}))
@@ -111,7 +111,7 @@ const NewRecipe = () => {
       category: state.category,
       ingredients: fields
     };
-    axios.post(`${SERVER_URL}/recipe`, newRecipe)
+    axios.post(`${SERVER_URL}/recipe`, newRecipe,  { withCredentials: true })
     .then(res=>navigate(`/profile`))
     .catch(err=> console.log(err))
   }

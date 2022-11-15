@@ -30,7 +30,7 @@ const CommentCard = ({recipeId, userId, myAvatar}) => {
         // post request to server to add new comment
         axios.post(`${SERVER_URL}/comment`, newComment,  { withCredentials: true })
         .then(res=> 
-            axios.get(`${SERVER_URL}/comment/recipe/${recipeId}`)
+            axios.get(`${SERVER_URL}/comment/recipe/${recipeId}`,  { withCredentials: true })
             .then(res=>setRecipeComments(res.data))
             .catch(err => console.log(err))
         )

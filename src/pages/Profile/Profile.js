@@ -37,15 +37,15 @@ const Profile = () => {
         setIsLoggedIn(true);
         setProfileData(res.data);
         
-        axios.get(`${SERVER_URL}/recipe/${res.data.id}`)
+        axios.get(`${SERVER_URL}/recipe/${res.data.id}`,  { withCredentials: true })
         .then((res) => setRecipes(res.data))
         .catch((err) => console.log(err))
         
-        axios.get(`${SERVER_URL}/recipe/saved/${res.data.id}`)
+        axios.get(`${SERVER_URL}/recipe/saved/${res.data.id}`,  { withCredentials: true })
         .then((res) => setSavedRecipes(res.data))
         .catch((err) => console.log(err))
         
-        axios.get(`${SERVER_URL}/user/friend/${res.data.id}`)
+        axios.get(`${SERVER_URL}/user/friend/${res.data.id}`,  { withCredentials: true })
         .then((res) => setFriends(res.data))
         .catch((err) => console.log(err))
       })

@@ -31,14 +31,14 @@ const UserProfile = () => {
 
   // get selected user recipes
   useEffect(()=>{
-    axios.get(`${SERVER_URL}/recipe/${profileId}`)
+    axios.get(`${SERVER_URL}/recipe/${profileId}`,  { withCredentials: true })
     .then((res) => setSelectedUserRecipes(res.data))
     .catch((err) => <div>nothing found</div>)
   },[])
 
   // get selected user info
   useEffect(()=>{
-    axios.get(`${SERVER_URL}/user/${profileId}`)
+    axios.get(`${SERVER_URL}/user/${profileId}`,  { withCredentials: true })
     .then((res) => setSelectedUser(res.data))
     .catch((err) => <div>nothing found</div>)
   },[])
