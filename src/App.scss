@@ -48,6 +48,9 @@
   .smartphone .content {
     width: 100%;
     height: 100vh;
+    @include desktop {
+      height: 100%;
+    }
     // background: white;
     overflow:scroll;
   }
