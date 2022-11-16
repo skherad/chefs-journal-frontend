@@ -80,7 +80,6 @@ const Profile = () => {
   }
 
   if (isAuthenticating) return null;
-  console.log(profileData)
 
   return (
     <>

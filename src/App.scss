@@ -1,13 +1,16 @@
 /* The device with borders */
 .smartphone {
-    position: relative;
-    width: 428px;
-    height: 926px;
-    margin: auto;
-    border: 16px black solid;
-    border-top-width: 60px;
-    border-bottom-width: 60px;
-    border-radius: 36px;
+
+    @include desktop {
+      position: relative;
+      width: 428px;
+      height: 926px;
+      margin: auto;
+      border: 16px black solid;
+      border-top-width: 60px;
+      border-bottom-width: 60px;
+      border-radius: 36px;  
+    }
   }
   
   /* The horizontal line on the top of the device */

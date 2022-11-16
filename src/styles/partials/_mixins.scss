@@ -13,3 +13,8 @@
     border: 2px $secondary-color-dark solid;
     cursor: pointer;
 }
+@mixin desktop {
+    @media (min-width:$breakpoint-desktop) {
+        @content;
+    }
+}
