@@ -35,7 +35,6 @@ const CommentCard = ({recipeId, userId, myAvatar}) => {
             .catch(err => console.log(err))
         )
         e.target.reset();
-
     }
 
   return (

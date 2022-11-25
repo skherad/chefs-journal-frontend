@@ -1,4 +1,5 @@
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
 
 .profile {
     background: linear-gradient(to top, $primary-color-light 92%, $primary-color-dark 92%);
@@ -73,12 +74,12 @@
         font-weight: 600;
         &:hover {
             cursor: pointer;
-            color: $primary-color-dark;
-            border-bottom: 2px solid $primary-color-dark;
+            @include desktop {
+                color: $primary-color-dark;
+            }
         }
         &--active {
             color: $primary-color-dark;
-            border-bottom: 2px solid $primary-color-dark;
         }
     }
 }

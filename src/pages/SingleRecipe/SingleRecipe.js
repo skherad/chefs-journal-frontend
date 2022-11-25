@@ -53,7 +53,7 @@ const SingleRecipe = () => {
     axios.get(`${SERVER_URL}/recipe/library/${userId}`,  { withCredentials: true })
     .then(res=>setLibrary(res.data.map(e=>e.id)))
     .catch(err => console.log(err))
-  },[])
+  },[library])
 
   // post new saved recipe to backend
   const saveHandler = (e) => {
@@ -68,8 +68,12 @@ const SingleRecipe = () => {
   }
 
   const unsaveHandler = (e) => {
-    e.preventDefault();
-    axios.delete(`${SERVER_URL}/recipe/singleRecipe/${recipeId}`, { withCredentials: true })
+    // e.preventDefault();
+    let unSave = {
+      user_id: Number(userId),
+      recipe_id: Number(recipeId)
+    } 
+    axios.delete(`${SERVER_URL}/recipe/unSave`, {data: unSave}, { withCredentials: true })
     .then(res => setSaved(false))
     .catch(err => console.log(err))
   }
@@ -85,13 +89,21 @@ const SingleRecipe = () => {
     <>
       {isLoggedIn ? (
         <section className='single-recipe'>
+          <div className="single-recipe__button-box">
+            <button onClick={() => navigate(-1)} className="back-button"></button>
+            {selectedRecipe[0]?.user_id==userId?
+            <button onClick={()=>navigate(`/editRecipe/${userId}/${recipeId}`)} className="single-recipe__edit-button">Edit</button>
+            :null}
+          </div>
           <div  className='single-recipe__photo' style={{backgroundImage: `url(${selectedRecipe[0]?.photo})`}}></div>
-          {!library?.includes(Number(recipeId))&&<button onClick={saveHandler}  className={!saved ? "single-recipe__save-button" :"single-recipe__save-button--disabled"}>SAVE</button>}
           {selectedRecipe[0]?.user_id==userId?
             <button onClick={deleteHandler} className="single-recipe__delete-button">DELETE</button>
             :
-            null}
-          {saved&&<button className="single-recipe__save-button single-recipe__save-button--done">SAVED✔️</button>}
+            library?.includes(Number(recipeId))&&<button onClick={unsaveHandler} className="single-recipe__save-button  single-recipe__save-button--done">SAVED✔️</button>
+          }
+
+          {!library?.includes(Number(recipeId))&&<button onClick={saveHandler} className={!library?.includes(Number(recipeId)) ? "single-recipe__save-button" :"single-recipe__save-button--disabled"}>SAVE</button>}
+          
           <h2 className='single-recipe__header'>{selectedRecipe[0]?.title}</h2>
 
           {/* render ingredients */}
@@ -110,7 +122,10 @@ const SingleRecipe = () => {
             )}
           </ol>
           {/* link to writer's profile */}
-          <Link to={`/userProfile/${userId}/${selectedRecipe[0]?.user_id}`} className='single-recipe__title single-recipe__name links'>by: {selectedRecipe[0]?.name}</Link>
+          {selectedRecipe[0]?.user_id==userId?
+            null
+            :<Link to={`/userProfile/${userId}/${selectedRecipe[0]?.user_id}`} className='single-recipe__title single-recipe__name links'>by: {selectedRecipe[0]?.name}</Link>
+          }
           {/* comments component */}
           <CommentCard recipeId={recipeId} userId={userId}  myAvatar={myAvatar}/>
         </section>

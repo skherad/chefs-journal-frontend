@@ -94,27 +94,23 @@ const Profile = () => {
               ></div>
               <h2 className='profile__username'>{profileData.username}</h2>
             </div>
-            {/* profile stats bar - right now it's hardcoded */}
-            <ul className="profile__stats">
-              <li className="profile__stats-item profile__stats-item--first">
-                <div className='profile__stats-num'>{recipes.length}</div>
-                <div className="profile__stats-label">Recipes</div>
-              </li>
-              <li className="profile__stats-item">
-                <div className='profile__stats-num'>{savedRecipes.length}</div>
-                <div className="profile__stats-label">Saves</div>
-              </li>
-              <li className="profile__stats-item">
-                <div className='profile__stats-num'>{friends.length}</div>
-                <div className="profile__stats-label">Following</div>
-              </li>
-            </ul>
             {/* profile navigation */}
             <div className="profile__wrapper">
-              <nav className='profile__nav'>
-                <div onClick={()=>recipeClickHandler()} className={!viewMyRecipe ? "profile__nav-link" :"profile__nav-link profile__nav-link--active"}>My Recipes</div>
-                <div onClick={()=>savedRecipeClickHandler()} className={!viewMySavedRecipe ? "profile__nav-link" :"profile__nav-link profile__nav-link--active"}>Saved Recipes</div>
-                <div onClick={()=>myFriendsClickHandler()} className={!viewMyFriends ? "profile__nav-link" :"profile__nav-link profile__nav-link--active"}>Following</div>
+              <nav>
+                <ul className='profile__stats'>
+                  <li className="profile__stats-item profile__stats-item--first">
+                    <div className='profile__stats-num'>{recipes.length}</div>
+                    <div onClick={()=>recipeClickHandler()} className={!viewMyRecipe ? "profile__nav-link" :"profile__nav-link profile__nav-link--active"}>My Recipes</div>
+                  </li>
+                  <li className="profile__stats-item">
+                    <div className='profile__stats-num'>{savedRecipes.length}</div>
+                    <div onClick={()=>savedRecipeClickHandler()} className={!viewMySavedRecipe ? "profile__nav-link" :"profile__nav-link profile__nav-link--active"}>Saved Recipes</div>
+                  </li>
+                  <li className="profile__stats-item">
+                    <div className='profile__stats-num'>{friends.length}</div>
+                    <div onClick={()=>myFriendsClickHandler()} className={!viewMyFriends ? "profile__nav-link" :"profile__nav-link profile__nav-link--active"}>Following</div>
+                  </li>
+                </ul>
               </nav>
               {viewMyRecipe?(
                   <MyRecipes userId={profileData.id} recipes={recipes}/>

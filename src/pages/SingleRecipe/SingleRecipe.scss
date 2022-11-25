@@ -5,7 +5,7 @@
     background-color: $primary-color-light;
     display: flex;
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 1rem;
     &__photo {
         align-self: center;
         margin-bottom: 1rem;
@@ -27,7 +27,6 @@
             border: 2px solid $primary-color-dark;
             color: $primary-color-dark;
             width: 9.375rem;
-            cursor: auto;
             box-shadow: none;
         }
         &--disabled {
@@ -60,5 +59,15 @@
     }
     &__name {
         width: fit-content;
+    }
+    &__edit-button {
+        @include button;
+        font-size: 0.75rem;
+        width: 6rem;
+        height: 2.5rem;
+    }
+    &__button-box {
+        display: flex;
+        justify-content: space-between;
     }
 }

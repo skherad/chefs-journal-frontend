@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import uniqid from 'uniqid';
 import axios from 'axios';
 
@@ -10,7 +10,7 @@ import './UserProfile.scss'
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const UserProfile = () => {
-
+  let navigate = useNavigate();
   let {profileId, userId} = useParams();
 
   const [selectedUser, setSelectedUser] = useState([]);
@@ -59,6 +59,7 @@ const UserProfile = () => {
     <>
       {isLoggedIn?(
       <section className='user'>
+          <button onClick={() => navigate(-1)} className="back-button back-button--profile"></button>
         <div className='profile__header'>
           <div  className='profile__avatar' style={{backgroundImage: `url(${selectedUser[0]?.avatar_url})`}}></div>
           <div className="user__header">{selectedUser[0]?.name}</div>
