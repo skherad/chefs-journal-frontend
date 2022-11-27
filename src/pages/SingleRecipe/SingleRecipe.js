@@ -14,7 +14,7 @@ const SingleRecipe = () => {
 
   let navigate = useNavigate()
   let {recipeId, userId} = useParams();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   // set avatar t pass down to comment section
   const [myAvatar, setMyAvatar] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState([]);
@@ -30,7 +30,7 @@ const SingleRecipe = () => {
       .get(`${SERVER_URL}/auth/profile`, { withCredentials: true })
       .then((res) => {
         if (res.data) {
-          setIsLoggedIn(true);
+          // setIsLoggedIn(true);
           setMyAvatar(res.data.avatar_url)
         }
       });
@@ -87,7 +87,7 @@ const SingleRecipe = () => {
 
   return (
     <>
-      {isLoggedIn ? (
+      {/* {isLoggedIn ? ( */}
         <section className='single-recipe'>
           <div className="single-recipe__button-box">
             <button onClick={() => navigate(-1)} className="back-button"></button>
@@ -129,7 +129,7 @@ const SingleRecipe = () => {
           {/* comments component */}
           <CommentCard recipeId={recipeId} userId={userId}  myAvatar={myAvatar}/>
         </section>
-      ) : (
+      {/* ) : (
         // If user is not logged in, render login button
         <>
           <p>
@@ -137,7 +137,7 @@ const SingleRecipe = () => {
           </p>
           <LoginButton />
         </>
-      )}
+      )} */}
     </>
   )
 }

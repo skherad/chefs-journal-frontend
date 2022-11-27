@@ -57,7 +57,7 @@ const UserProfile = () => {
 
   return (
     <>
-      {isLoggedIn?(
+      {/* {isLoggedIn?( */}
       <section className='user'>
           <button onClick={() => navigate(-1)} className="back-button back-button--profile"></button>
         <div className='profile__header'>
@@ -83,7 +83,7 @@ const UserProfile = () => {
           )}
         </ul>
       </section>
-    ):(
+    {/* ):(
       // If user is not logged in, render login button
       <>
         <p>
@@ -91,7 +91,7 @@ const UserProfile = () => {
         </p>
         <LoginButton />
       </>
-    )}
+    )} */}
     </>
     
   )

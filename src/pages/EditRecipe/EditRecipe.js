@@ -141,7 +141,7 @@ const EditRecipe = () => {
 
   return (
      <section className="new-recipe">
-      {isLoggedIn?(
+      {/* {isLoggedIn?( */}
         <form className="form" onSubmit={submitHandler}>
           {/* upload a photo */}
           <label htmlFor="foodPic" className="form__label">Choose file to upload - accepted types: .jpg, .jpeg, .png</label>
@@ -194,7 +194,7 @@ const EditRecipe = () => {
             <button type="submit" className="form__submit">save</button>
           </div>
           </form>
-      ):(
+      {/* ):(
         // If user is not logged in, render a login button
         <section className="home">
           <p>
@@ -202,7 +202,7 @@ const EditRecipe = () => {
           </p>
           <LoginButton />
         </section>
-      )}
+      )} */}
     </section>
   )
 }

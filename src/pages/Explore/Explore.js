@@ -56,7 +56,7 @@ const Explore = () => {
 
   return (
     <>
-    {isLoggedIn ? (
+    {/* {isLoggedIn ? ( */}
         <section className="explore">
         {/* show nav bar */}
         <div className="explore__nav">
@@ -129,7 +129,7 @@ const Explore = () => {
             </ul>
         )}
       </section>
-      ):(
+      {/* ):(
         // If user is not logged in, render a login button
         <section className="home">
           <p>
@@ -137,7 +137,7 @@ const Explore = () => {
           </p>
           <LoginButton />
         </section>
-      )}
+      )} */}
     </>
   )
 }
