@@ -9,7 +9,6 @@ const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const MyFriends = ({userId, friends}) => {
 
-console.log(friends)
   return (
     <section className='friends'>
       <ul className="explore__user-container">

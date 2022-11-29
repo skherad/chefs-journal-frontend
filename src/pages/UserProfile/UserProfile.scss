@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     padding: 0 1rem;
+    position: relative;
     &__header {
         font-size: 1.25rem;
         color: $primary-color-dark;

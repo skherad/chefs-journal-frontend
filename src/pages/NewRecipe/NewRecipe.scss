@@ -98,6 +98,11 @@
             margin-left: 0.5rem;
         }
     }
+    &__text {
+        margin: 0 0 1rem 0;
+        font-size: 0.8rem;
+        color: $primary-color-dark;
+    }
     &__textarea {
         padding: 1rem;
         border: 1px $border solid;

@@ -55,6 +55,12 @@ const UserProfile = () => {
     .catch(err => console.log(err))
   }
 
+  const msgHandler = (e) => {
+    e.preventDefault();
+    alert('Coming Soon');
+  }
+  
+
   return (
     <>
       {/* {isLoggedIn?( */}
@@ -67,7 +73,7 @@ const UserProfile = () => {
         <div>
           <button onClick={connectHandler}  className={!connected ? 'user__connect' :"single-recipe__save-button--disabled"}>Follow</button>
           {connected&&<button className="user__connect user__connect--done">Followed✔️</button>}
-          <button className='user__msg' disabled>Message</button>
+          <button className='user__msg' onClick={msgHandler}>Message</button>
         </div>
         
         {/* render selected user's recipes */}

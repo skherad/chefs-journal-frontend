@@ -31,7 +31,6 @@ body {
     text-decoration: none;
 }
 .back-button {
-    // @include button;
     background-image: url('../../assets/images/arrow.svg');
     background-repeat: no-repeat;
     background-size: 120%;
@@ -44,10 +43,8 @@ body {
     padding: 0;
     cursor: pointer;
     &--profile {
-        // background-image: url('../../assets/images/arrow-light.svg');
-        // background-color: $primary-color-dark;
         position: absolute;
         align-self: flex-start;
-        top: 165px;
+        top: 110px;
     }
 }

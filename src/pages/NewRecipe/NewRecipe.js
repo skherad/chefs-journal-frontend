@@ -162,6 +162,7 @@ const NewRecipe = () => {
 
           {/* add instructions */}
           <label htmlFor="instructions" className="form__label">Instructions:</label>
+          <p className="form__text">Separate steps with a dash "-"</p>
           <textarea name="instructions" id="instructions" placeholder="Type instructions..." className="form__textarea" value={state.instructions} onChange={changeHandler}></textarea>
           
           {/* submit the form */}
