@@ -31,9 +31,9 @@ const Header = () => {
 
   return (
     <header className="header">
+      {isLoggedIn ?
+      (<>
       <Link to="/profile" className="header__link-logo"><img src={logo} className="header__logo"></img></Link>
-      {/* show nav buttons if user is logged in */}
-      {isLoggedIn &&
         <nav className="header__nav">
           <Link to="/profile" className="header__link"><img src={ProfileIcon} className="icon" alt="profile"></img></Link>
           <Link to={`/explore/${userId}`} className="header__link"><img src={SearchIcon} className="icon" alt="search"></img></Link>
@@ -41,6 +41,16 @@ const Header = () => {
             <img src={LogOutIcon} className="icon"/>
           </a>
         </nav>
+      </> ): (
+        <>
+        <Link to="/profile/8" className="header__link-logo"><img src={logo} className="header__logo"></img></Link>
+          <nav className="header__nav">
+            <Link to="/profile/8" className="header__link"><img src={ProfileIcon} className="icon" alt="profile"></img></Link>
+            <Link to={`/explore/8`} className="header__link"><img src={SearchIcon} className="icon" alt="search"></img></Link>
+          </nav>
+        </>
+      )
+
       }
     </header>
   )

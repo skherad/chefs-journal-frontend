@@ -10,6 +10,7 @@ import EditRecipe from "./pages/EditRecipe/EditRecipe";
 //components
 import Header from './components/Header/Header';
 import Footer from "./components/footer/Footer";
+import GuestProfile from "./pages/GuestProfile/GuestProfile";
 
 import './App.scss';
 
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path={"/"} element={<Home />}></Route>
           <Route path={"/profile/"} element={<Profile />} />
+          <Route path={"/profile/8"} element={<GuestProfile />} />
           <Route path={"/singleRecipe/:userId/:recipeId"} element={<SingleRecipe />} />
           <Route path={"/editRecipe/:userId/:recipeId"} element={<EditRecipe />} />
           <Route path={"/newRecipe/:userId"} element={<NewRecipe />} />
