@@ -47,6 +47,9 @@ const Header = () => {
           <nav className="header__nav">
             <Link to="/profile/8" className="header__link"><img src={ProfileIcon} className="icon" alt="profile"></img></Link>
             <Link to={`/explore/8`} className="header__link"><img src={SearchIcon} className="icon" alt="search"></img></Link>
+            <a className="header__link" href={`/`}>
+              <img src={LogOutIcon} className="icon"/>
+            </a>
           </nav>
         </>
       )

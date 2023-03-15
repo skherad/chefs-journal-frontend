@@ -81,7 +81,7 @@ const SingleRecipe = () => {
   const deleteHandler = (e) => {
     e.preventDefault();
     axios.delete(`${SERVER_URL}/recipe/singleRecipe/${recipeId}`, { withCredentials: true })
-    .then(res=>navigate("/profile"))
+    .then(res=>navigate(`/profile/${userId}`))
     .catch(err=>console.log(err))
   }
 

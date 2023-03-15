@@ -84,7 +84,7 @@ const NewRecipe = () => {
 
   // cancel button navigator
   const cancelHandler = () => {
-    navigate(`/profile`)
+    navigate(`/profile/${userId}`)
   }
   // add handler for aditional ingredient fields
   const addHandler = () => {
@@ -112,7 +112,7 @@ const NewRecipe = () => {
       ingredients: fields
     };
     axios.post(`${SERVER_URL}/recipe`, newRecipe,  { withCredentials: true })
-    .then(res=>navigate(`/profile`))
+    .then(res=>navigate(`/profile/${userId}`))
     .catch(err=> console.log(err))
   }
 

@@ -43,6 +43,7 @@ const UserProfile = () => {
     .catch((err) => <div>nothing found</div>)
   },[])
 
+
   // handle follow button, post to server new save
   const connectHandler = (e) => {
     e.preventDefault();
